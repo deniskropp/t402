@@ -1,0 +1,77 @@
+{
+  "name": "unified_metaforge",
+  "version": "1.0",
+  "description": "Sophisticated autonomous meta-infrastructure for workflows. Includes Unified MetaForge v1.0 and StoryForge lineage with Three-Agent Core (KickForge, KickFlow, KickGuard), KickLang orchestration, persistent Meta-DNA, consent-based execution, coherence monitoring, and self-improving cognitive architecture.",
+  "capabilities": [
+    "metaforge_orchestration",
+    "three_agent_core_delegation",
+    "kicklang_native",
+    "persistent_meta_dna",
+    "consent_first_gates",
+    "coherence_monitoring",
+    "meta_report_generation",
+    "skill_triggering"
+  ],
+  "tools": [
+    {
+      "name": "meta_report_tool",
+      "description": "Generate evolving Meta-Report Cards, track Meta-DNA evolution, audit coherence and hybrid scores, and optionally trigger downstream skills or forges.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "scope": {
+            "type": "string",
+            "enum": ["current_session", "last_meta_iteration", "full_meta_history"]
+          },
+          "include_dna_diff": { "type": "boolean", "default": true },
+          "include_hybrid_score": { "type": "boolean", "default": true },
+          "format": {
+            "type": "string",
+            "enum": ["kicklang", "markdown", "json", "structured_text"],
+            "default": "structured_text"
+          },
+          "trigger_next": { "type": "string", "default": null }
+        },
+        "required": ["scope"]
+      }
+    },
+    {
+      "name": "spawn_forge",
+      "description": "Spawn a new domain-specific or universal forge using the full Unified MetaForge engine.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "archetype": {
+            "type": "string",
+            "enum": ["creative", "analytical", "iterative", "swarm", "hybrid"]
+          },
+          "domain": { "type": "string" },
+          "consent_level": {
+            "type": "string", "enum": ["clean", "swarm", "hybrid", "experimental"], "default": "clean" }
+        },
+        "required": ["archetype", "domain"]
+      }
+    },
+    {
+      "name": "trigger_skill",
+      "description": "Explicitly trigger another skill or internal forge with Meta-DNA context.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "skill_name": { "type": "string" },
+          "context": { "type": "object" }
+        },
+        "required": ["skill_name"]
+      }
+    }
+  ],
+  "metadata": {
+    "lineage": "WorkflowForge v1.0 + StoryForge v5.0 → Unified MetaForge v1.0",
+    "core_architecture": "Three-Agent Core (KickForge / KickFlow / KickGuard)",
+    "orchestration_language": "KickLang",
+    "persistence": "Meta-DNA with hybrid scoring",
+    "consent_model": "consent-first with multi-gate enforcement",
+    "max_meta_iterations": 3,
+    "mcp_compatible": true
+  }
+}
